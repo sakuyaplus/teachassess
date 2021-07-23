@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'css/templatemo-stand-blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.css' %}">
+<link rel="stylesheet" href="{% static 'css/flex-slider.css' %}">
+
+  <title>Test {%block title%}{% endblock%}</title>
+</head>
+<body>
+
+{% include 'partials/_navbar.html' %}
+
+{%block content %}
+
+{%endblock%}
+<!-- Footer -->
+  {% include 'partials/_footer.html' %}
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+ 
+</body>
+</html>

@@ -1,0 +1,63 @@
+  
+<div class="navbar navbar-inverse">
+        <div >
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">GROUP.COM</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li 
+                            {% if '/' == request.path %}
+                                class="active"
+                            {%endif%}
+                            ><a href="{%url 'index'%}">主页</a></li>
+                            <li
+                            {% if 'teachers' in request.path %}
+                                class="active"
+                            {%endif%}
+                            ><a href="{%url 'teachers'%}">教师信息</a></li>
+                            <li
+                             {% if 'courses' in request.path %}
+                                class="active"
+                            {%endif%}
+                            ><a href="#">课程信息</a></li>
+                            <li
+                             {% if 'discuss' in request.path %}
+                                class="active"
+                            {%endif%}
+                            ><a href="#">讨论区</a></li>
+                            <li
+                             {% if 'about' in request.path %}
+                                class="active"
+                            {%endif%}
+                            ><a href="{%url 'about'%}">关于</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id="" placeholder="搜索" class="form-control">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人信息</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> 登录 / 注册 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">登录</a></li>
+                                    <li><a href="#">注册</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
