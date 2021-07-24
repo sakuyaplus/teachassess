@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'pages',
     'teachers',
     'accounts',
+    'tcomments',
+    
 ]
 
 MIDDLEWARE = [

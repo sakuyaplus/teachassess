@@ -1100,10 +1100,15 @@ footer p a:hover {
 		margin-top: 60px;
 	}
 }
+.reg{
+	margin-top: 50px;
 
-.register input {
-	width: 100%;
+	
+}
+.reg input {
+	width: 500px;
 	height: 46px;
+	justify-content: center;
 	border: 1px solid #eee;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -1112,4 +1117,27 @@ footer p a:hover {
 	outline: none;
 	padding: 0px 15px;
 	margin-bottom: 30px;
+	margin-left: 250px;
+
 }
+.reg p   { display: table-row;  }
+.reg label { display: table-cell; margin-left: 100px;}
+.reg input { display: table-cell; }
+
+.tip-word{margin-left:20px;color:red;}
+.stars{margin: 8px;height:20px;}
+.stars span{ float: left; line-height: 15px; }
+.stars i{width: 15px; 
+	height: 15px; 
+	line-height: 15px; 
+	float: left; 
+	margin-right: 5px;
+	background-position:center; 
+	background-image:url(../image/star_gray.png);
+	background-size: 100%; 
+	color: #fff; 
+	text-align: center; 
+	cursor:Pointer; 
+	font-style: normal;
+}
+.stars .on{background-image:url(../image/star.png);background-position:center;background-size: 100%;}
