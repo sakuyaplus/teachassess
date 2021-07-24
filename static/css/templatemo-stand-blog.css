@@ -271,7 +271,7 @@ header .navbar {
 	position: relative;
 	height: 520px;
 	width: 450px;
-	text-align: center;
+	
 	float:left;
 	left:80px;
 	margin:25px
@@ -289,6 +289,7 @@ header .navbar {
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.25px;
+	
 }
 
 .owl-banner .item .item-content h4 {
@@ -366,7 +367,7 @@ header .navbar {
 
 .call-to-action .main-content {
 	padding: 40px;
-	background-image: url(../images/cta-bg.jpg);
+	background-color: #0024a7;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -379,14 +380,6 @@ header .navbar {
 	letter-spacing: 0.5px;
 }
 
-.call-to-action .main-content h4 {
-	margin-bottom: 0px;
-	margin-top: 12px;
-	color: #fff;
-	font-size: 26px;
-	font-weight: 900;
-	letter-spacing: 0.25px;
-}
 
 .call-to-action .main-content .main-button {
 	text-align: right;
@@ -410,6 +403,13 @@ header .navbar {
 	overflow: hidden;
 }
 
+.blog-posts .blog-thumb img.listing {
+	width: auto;
+	margin-left: 50px;
+	height: 200px;
+	overflow: hidden;
+}
+
 .blog-posts .down-content {
 	padding: 40px;
 	border-right: 1px solid #eee;
@@ -430,7 +430,7 @@ header .navbar {
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 	font-weight: 900;
-	color: #20232e;
+	
 	margin: 10px 0px 12px 0px;
 }
 
@@ -448,6 +448,15 @@ header .navbar {
 .blog-posts .down-content h4 {
 	font-size: 20px;
 	letter-spacing: 0.25px;
+}
+
+.blog-posts .down-content p.abstract{
+	height: 120px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
 }
 
 .grid-system .down-content ul.post-info li {
@@ -558,7 +567,7 @@ ul.page-numbers li a:hover {
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.5px;
-	color: #20232e;
+	
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;
@@ -600,7 +609,7 @@ ul.page-numbers li a:hover {
 }
 
 .blog-posts .comments ul li .right-content h4 {
-	color: #20232e;
+	
 	font-size: 19px;
 	font-weight: 900;
 	letter-spacing: 0.5px;
@@ -1090,4 +1099,17 @@ footer p a:hover {
 		margin-left: 0px;
 		margin-top: 60px;
 	}
+}
+
+.register input {
+	width: 100%;
+	height: 46px;
+	border: 1px solid #eee;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #7a7a7a;
+	outline: none;
+	padding: 0px 15px;
+	margin-bottom: 30px;
 }

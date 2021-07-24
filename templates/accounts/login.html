@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+ | 登录
+{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+    {% include 'partials/_alerts.html' %}
+    <form class="well form-horizontal" action="{% url 'login'%}" method="POST"  id="contact_form">
+    {%csrf_token%}
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>登录</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+
+
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">用户名</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="username" placeholder="Username" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >密码</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="password" placeholder="Password" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button type="submit" class="btn btn-warning" >
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp登录 
+    <span class="glyphicon glyphicon-send"></span>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    </button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+  
+{% endblock %}

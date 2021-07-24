@@ -403,6 +403,13 @@ header .navbar {
 	overflow: hidden;
 }
 
+.blog-posts .blog-thumb img.listing {
+	width: auto;
+	margin-left: 50px;
+	height: 200px;
+	overflow: hidden;
+}
+
 .blog-posts .down-content {
 	padding: 40px;
 	border-right: 1px solid #eee;
@@ -423,7 +430,7 @@ header .navbar {
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 	font-weight: 900;
-	color: #20232e;
+	
 	margin: 10px 0px 12px 0px;
 }
 
@@ -443,7 +450,7 @@ header .navbar {
 	letter-spacing: 0.25px;
 }
 
-.blog-posts .down-content p {
+.blog-posts .down-content p.abstract{
 	height: 120px;
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -560,7 +567,7 @@ ul.page-numbers li a:hover {
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.5px;
-	color: #20232e;
+	
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;
@@ -602,7 +609,7 @@ ul.page-numbers li a:hover {
 }
 
 .blog-posts .comments ul li .right-content h4 {
-	color: #20232e;
+	
 	font-size: 19px;
 	font-weight: 900;
 	letter-spacing: 0.5px;
@@ -1093,3 +1100,26 @@ footer p a:hover {
 		margin-top: 60px;
 	}
 }
+.reg{
+	margin-top: 50px;
+
+	
+}
+.reg input {
+	width: 500px;
+	height: 46px;
+	justify-content: center;
+	border: 1px solid #eee;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #7a7a7a;
+	outline: none;
+	padding: 0px 15px;
+	margin-bottom: 30px;
+	margin-left: 250px;
+
+}
+.reg p   { display: table-row;  }
+.reg label { display: table-cell; margin-left: 100px;}
+.reg input { display: table-cell; }

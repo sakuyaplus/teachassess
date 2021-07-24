@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="navbar-header">
-                        <a href="#" class="navbar-brand">GROUP.COM</a>
+                        <a href="#" class="navbar-brand">评教+</a>
                     </div>
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
@@ -46,16 +46,28 @@
                                 </form>
                             </li>
                         </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人信息</a></li>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> 登录 / 注册 <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">登录</a></li>
-                                    <li><a href="#">注册</a></li>
-                                </ul>
+                        {%if user.is_authenticated%}
+                            <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">欢迎，{{user.username}}</a></li>
+                            <li><a href="{%url 'dashboard'%}"><span class="glyphicon glyphicon-user"></span> 个人信息</a></li>
+                            <li>
+                            <a href="javascript:{document.getElementById('logout').submit()}">
+                                <i class="fas fa-sign-out-alt"></i> 退出登录
+                            </a>
+                            <form action="{% url 'logout'%}" method="POST" id="logout">
+                                {% csrf_token %}
+                                <input type="hidden">
+                            </form>
                             </li>
-                        </ul>
+
+                            </ul>
+                        {%else%}
+                            <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{%url 'login'%}"><span class="glyphicon glyphicon-user"></span> 登录</a></li>
+                            <li><a href="{%url 'register'%}"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                            </ul>
+                        {%endif%}
+                        
                     </div>
                 </div>
             </div>

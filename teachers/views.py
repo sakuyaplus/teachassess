@@ -15,9 +15,9 @@ def index(request):
     return render(request, 'teachers/teachers.html',context)
 
 def listing(request, listing_id):
-   
+    listing = get_object_or_404(Teacher, pk=listing_id)
     context = {
-        
+        'listing': listing
     }
 
 

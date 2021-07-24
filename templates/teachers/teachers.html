@@ -5,7 +5,7 @@
 {% load humanize %}
 
 {% block title %}
- | Welcome
+ | 教师列表
 {% endblock %}
 
 {% block content %}
@@ -51,12 +51,12 @@
                         </div>
                         <div class="down-content">
                         <span>{{listing.rank}}</span>
-                        <a href="post-details.html"><h4>{{listing.name}}</h4></a>
+                        <a href="{% url 'teacherlisting' listing.id %}"><h4>{{listing.name}}</h4></a>
                         <ul class="post-info">
-                            <li><a href="#">{{listing.dept}}</a></li>
-                            <li><a href="#">{{listing.organs}}</a></li>
+                            <li>{{listing.dept}}</li>
+                            <li>{{listing.organs}}</li>
                         </ul>
-                        <p>{{listing.researchfield}}</p>
+                        <p class="abstract">{{listing.researchfield}}</p>
                        
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item categories">
                     <div class="sidebar-heading">
-                      <h2>Categories</h2>
+                      <h2>学院</h2>
                     </div>
                     <div class="content">
                       <ul>
