@@ -1,7 +1,7 @@
 from tcomments.models import TComment
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, Paginator, PageNotAnInteger
-
+from academies.models import Academy
 from .models import Teacher
 # Create your views here.
 def index(request):
@@ -9,10 +9,12 @@ def index(request):
     paginator=Paginator(listings,6)
     page=request.GET.get('page')
     paged_listings=paginator.get_page(page)
-
+    academies=Academy.objects.all()
     context={
-        'listings': paged_listings
+        'listings': paged_listings,
+        'academies': academies,
     }
+
     return render(request, 'teachers/teachers.html',context)
 
 def listing(request, listing_id):

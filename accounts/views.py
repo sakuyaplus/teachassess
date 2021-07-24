@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
+from tcomments.models import TComment
 
 # Create your views here.
 def register(request):
@@ -60,4 +61,16 @@ def logout(request):
     return render(request, 'accounts/register.html')
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+
+    
+    comments = TComment.objects.order_by('-comment_date').filter(
+        user_id=request.user.id
+    )
+    commentcounts = len(comments)
+    context = {
+        'comments': comments,
+        'commentcounts': commentcounts,
+    }
+
+
+    return render(request, 'accounts/dashboard.html',context)

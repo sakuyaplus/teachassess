@@ -75,7 +75,7 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item comments">
                     <div class="sidebar-heading">
-                      <h2>{{commentcounts}} 条评论</h2>
+                      <h2>{{commentcounts}} 条评价</h2>
                     </div>
                     <div class="content">
                       <ul>
@@ -107,6 +107,7 @@
                             <input type="hidden" name="user_id" value="{{user.id}}">
                             <input type="hidden" name="user_name" value="{{user.username}}">
                             <input type="hidden" name="teacher_id" value="{{listing.id}}">
+                            <input type="hidden" name="teacher_name" value="{{listing.name}}">
                             <div class="row">
                             <h4 style="margin-left: 25px;">满意度</h4>
                             <div class="rating">
@@ -133,7 +134,7 @@
                         </form>
                         </div>
                     {% else %}
-                        <h3>您需要登录后才能发表评论</h3> 
+                        <h3>您需要登录后才能发表评价</h3> 
                     {% endif %}
                   </div>
                 </div>

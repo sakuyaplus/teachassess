@@ -123,16 +123,13 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item categories">
                     <div class="sidebar-heading">
-                      <h2>学院</h2>
+                      <h2>按学院筛选</h2>
                     </div>
                     <div class="content">
                       <ul>
-                        <li><a href="#">- Nature Lifestyle</a></li>
-                        <li><a href="#">- Awesome Layouts</a></li>
-                        <li><a href="#">- Creative Ideas</a></li>
-                        <li><a href="#">- Responsive Templates</a></li>
-                        <li><a href="#">- HTML5 / CSS3 Templates</a></li>
-                        <li><a href="#">- Creative &amp; Unique</a></li>
+                        {% for academy in academies%}
+                            <li><a href="#">- {{academy.academy_name}}</a></li>
+                        {%endfor%}
                       </ul>
                     </div>
                   </div>
@@ -140,17 +137,15 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item tags">
                     <div class="sidebar-heading">
-                      <h2>Tag Clouds</h2>
+                      <h2>按职称筛选</h2>
                     </div>
                     <div class="content">
                       <ul>
-                        <li><a href="#">Lifestyle</a></li>
-                        <li><a href="#">Creative</a></li>
-                        <li><a href="#">HTML5</a></li>
-                        <li><a href="#">Inspiration</a></li>
-                        <li><a href="#">Motivation</a></li>
-                        <li><a href="#">PSD</a></li>
-                        <li><a href="#">Responsive</a></li>
+                        <li><a href="#">教授</a></li>
+                        <li><a href="#">副教授</a></li>
+                        <li><a href="#">副研究员</a></li>
+                        <li><a href="#">硕导</a></li>
+                        <li><a href="#">讲师</a></li>
                       </ul>
                     </div>
                   </div>

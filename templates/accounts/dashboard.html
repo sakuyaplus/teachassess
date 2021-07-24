@@ -34,14 +34,43 @@
       </nav>
     </div>
   </section>
-  
+
   {% include 'partials/_alerts.html' %}
   <section id="dashboard" class="py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Welcome {{user.username}}</h2>
-         
+          <h2>欢迎， {{user.username}}</h2>
+         </div>
+
+         <br></br>
+
+         <div class="col-md-12">
+          <h3>教师评价记录</h3>
+             <br></br>
+             <div class="sidebar-item comments">
+                <div class="sidebar-heading">
+                    <h4>{{commentcounts}} 条评价</h4>
+                </div>
+                <div class="content">
+                    <ul>
+                      {% for comment in comments%}
+                      <br></br>
+                    <li>
+                      <div class="right-content">
+                        <h4>对<a href="{%url 'teacherlisting' comment.teacher_id %}"> {{comment.teacher_name}}</a> 的评论  <span>发表于{{comment.comment_date}}</span></h4>
+                        <p>{{comment.stars}}⭐ {{comment.message}}</p>
+                      </div>
+                    </li>
+                    
+                      {% endfor %}
+                      </ul>
+                  </div>
+                </div>
+              </div>
+          <h3>课程评价记录</h3>
+      </div>
+    </div>
   </section>
 
 {% endblock %}

@@ -7,12 +7,13 @@ def tcomment(request):
         user_id=request.POST['user_id']
         user_name=request.POST['user_name']
         teacher_id=request.POST['teacher_id']
+        teacher_name=request.POST['teacher_name']
         try:
             stars=request.POST['rating']
         except:
             messages.error(request,'评价星级范围为1-5')
             return redirect('/teachers/'+teacher_id)
-            
+
         message=request.POST['message']
         if int(stars)<1 or int(stars)>5:
             messages.error(request,'评价星级范围为1-5')
@@ -29,7 +30,7 @@ def tcomment(request):
        
 
         comment = TComment(user_id=user_id,user_name=user_name,teacher_id=teacher_id,
-        stars=stars,message=message)
+        stars=stars,message=message,teacher_name=teacher_name)
 
         comment.save()
         messages.success(request,'评价成功')
