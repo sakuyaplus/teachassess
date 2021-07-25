@@ -1156,3 +1156,17 @@ footer p a:hover {
   .rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
 	color: #F9DF4A;
   }
+
+  .sidebar button  {
+	display: inline-block;
+	width: 120px;
+
+	margin-top: 40px;
+	background-color: #f48840;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 1px 20px;
+	text-transform: uppercase;
+	transition: all .3s;
+}
