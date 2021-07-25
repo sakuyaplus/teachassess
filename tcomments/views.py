@@ -3,6 +3,8 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 # Create your views here.
 def tcomment(request):
+
+    
     if request.method == 'POST':
         user_id=request.POST['user_id']
         user_name=request.POST['user_name']

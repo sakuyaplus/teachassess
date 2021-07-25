@@ -8,6 +8,7 @@
  | 教师列表
 {% endblock %}
 
+
 {% block content %}
 
   <!-- Banner Starts Here -->
@@ -71,7 +72,8 @@
                     
                     {%if listings.has_previous%}
                         <li class="page-item">
-                        <a href="?page={{listings.previous_page_number}}">&laquo;</a>
+                        <a href="?page={{ listings.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">&laquo;</a>
+
                         </li>
                     {%else%}
                         <li class="page-item disabled">
@@ -86,14 +88,15 @@
                         </li>
                         {% else %}
                         <li>
-                        <a href="?page={{i}}">{{ i }}</a>
+                        
+                        <a href="?page={{i }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{i}}</a>
                         </li>
                         {%endif%}
                     {%endfor%}
 
                     {%if listings.has_next%}
                         <li>
-                        <a href="?page={{listings.next_page_number}}" class="page-link">&raquo;</a>
+                        <a href="?page={{ listings.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">&raquo;</a>
                         </li>
                     {%else%}
                         <li class="disabled">
@@ -141,6 +144,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="col-lg-12">
                   <div class="sidebar-item tags">
                     <div class="sidebar-heading">
@@ -161,6 +165,20 @@
                   </div>
                 </div>
 
+                <div class="col-lg-12">
+                  <div class="sidebar-item tags">
+                    <div class="sidebar-heading">
+                      <h2>排序</h2>
+                    </div>
+                    <div class="content">
+                      <select name="sort">
+                        <option selected='true' disabled=true></option>
+                        <option value ='1'>姓名拼音顺序</option>
+                        <option value ='2'>姓名拼音倒序</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
                  <div class="col-lg-12">
                       
                      <button type="submit" id="form-submit" class="main-button">搜索</button>

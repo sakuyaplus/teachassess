@@ -1,12 +1,13 @@
 from tcomments.models import TComment
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, Paginator, PageNotAnInteger
-from django.db.models import Q
+from django.db.models import Q,Avg
 from .models import Teacher
 from .choices import academy_choices,rank_choices
 # Create your views here.
 def index(request):
     listings = Teacher.objects.all().filter(show=True)
+
 
     if 'q' in request.GET:
         keywords=request.GET['q']
@@ -33,16 +34,25 @@ def index(request):
                 rank__icontains=rank
             )   
 
+    if 'sort' in request.GET:
+        sort=request.GET['sort']
+
+        if sort == '1':
+            listings = listings.order_by('englishname')
+        if sort == '2':
+            listings = listings.order_by('-englishname')
+
     paginator=Paginator(listings,6)
     page=request.GET.get('page')
     paged_listings=paginator.get_page(page)
+        
     context={
         'listings': paged_listings,
         'academy_choices':  academy_choices,
         'rank_choices': rank_choices,
         'values': request.GET
     }
-
+   
     return render(request, 'teachers/teachers.html',context)
 
 def listing(request, listing_id):
@@ -50,11 +60,15 @@ def listing(request, listing_id):
     comments = TComment.objects.order_by('-comment_date').filter(
         teacher_id=listing_id
     )
+    avgscore=TComment.objects.filter(teacher_id=listing_id).aggregate(Avg("stars"))['stars__avg']
+    if avgscore==None:
+        avgscore=0
     commentcounts = len(comments)
     context = {
         'listing': listing,
         'comments': comments,
         'commentcounts': commentcounts,
+        'avgscore': avgscore,
     }
 
 
@@ -66,3 +80,4 @@ def search(request):
         
     }
     return render(request, 'teachers/search.html', context)
+
